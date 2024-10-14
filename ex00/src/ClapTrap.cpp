@@ -4,17 +4,17 @@
 
 ClapTrap::ClapTrap(const std::string& name)
   : name_(name), hit_points_(10), energy_points_(10), attack_damage_(0) {
-  std::cout << "The constructor of ClapTrap called " << name << " has been called" << std::endl;
+  std::cout << "Constructor of ClapTrap called " << name << " has been called" << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
-  std::cout << "The destructor of ClapTrap called " << this->getName() << " has been called" << std::endl;
+  std::cout << "Destructor of ClapTrap called " << this->getName() << " has been called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
   : name_(other.getName()), hit_points_(other.getHitPoints())
     , energy_points_(other.getEnergyPoints()), attack_damage_(other.getAttackDamage()) {
-  std::cout << "The copy constructor of ClapTrap called " << this->getName() << " has been called" << std::endl;
+  std::cout << "Copy constructor of ClapTrap called " << this->getName() << " has been called" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
@@ -38,12 +38,13 @@ void ClapTrap::attack(const std::string& target) {
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-  if (this->getHitPoints() == 0) {
-    std::cout << "ClapTrap " << this->getName() << " can no longer move!" << std::endl;
+  if (this->getHitPoints() < amount) {
+    this->setHitPoints(0);
+  } else {
+    this->setHitPoints(this->getHitPoints() - amount);
   }
-  this->setHitPoints(this->getHitPoints() - amount);
   std::cout << "ClapTrap " << this->getName() << " has taken " << amount << " damage!" << std::endl;
-  std::cout << "The remaining hit points is " << this->getHitPoints() << std::endl;
+  std::cout << "Remaining hit points is " << this->getHitPoints() << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
@@ -52,9 +53,9 @@ void ClapTrap::beRepaired(unsigned int amount) {
     return;
   }
   this->setEnergyPoints(this->getEnergyPoints() - 1);
-  this->setHitPoints(this->getHitPoints() + static_cast<int>(amount));
+  this->setHitPoints(this->getHitPoints() + amount);
   std::cout << "ClapTrap " << this->getName() << " has been repaired by " << amount << " points!" << std::endl;
-  std::cout << "The remaining hit points is " << this->getHitPoints() << std::endl;
+  std::cout << "Remaining hit points is " << this->getHitPoints() << std::endl;
 }
 
 std::string ClapTrap::getName() const {
