@@ -3,7 +3,18 @@
 
 #include <iostream>
 
+ScavTrap::ScavTrap() : ClapTrap() {
+  this->setHitPoints(100);
+  this->setEnergyPoints(50);
+  this->setAttackDamage(20);
+  std::cout << "Default constructor of ScavTrap has been called" << std::endl;
+}
+
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
+  this->setName(name);
+  this->setHitPoints(100);
+  this->setEnergyPoints(50);
+  this->setAttackDamage(20);
   std::cout << "Constructor of ScavTrap " << name << " has been called" << std::endl;
 }
 
