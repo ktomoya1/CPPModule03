@@ -3,6 +3,13 @@
 
 #include <iostream>
 
+FragTrap::FragTrap() : ClapTrap() {
+  this->setHitPoints(100);
+  this->setEnergyPoints(100);
+  this->setAttackDamage(30);
+  std::cout << "Default constructor of FragTrap has been called" << std::endl;
+}
+
 FragTrap::FragTrap(const std::string& name) : ClapTrap(name) {
   this->setHitPoints(100);
   this->setEnergyPoints(100);
@@ -14,7 +21,11 @@ FragTrap::~FragTrap() {
   std::cout << "Destructor of FragTrap " << this->getName() << " has been called" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other) {
+FragTrap::FragTrap(const FragTrap& other) {
+  this->setName(other.getName());
+  this->setHitPoints(other.getHitPoints());
+  this->setEnergyPoints(other.getEnergyPoints());
+  this->setAttackDamage(other.getAttackDamage());
   std::cout << "Copy constructor of FragTrap " << this->getName() << " has been called" << std::endl;
 }
 
