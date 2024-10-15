@@ -4,17 +4,17 @@
 
 ClapTrap::ClapTrap(const std::string& name)
   : name_(name), hit_points_(10), energy_points_(10), attack_damage_(0) {
-  std::cout << "Constructor of ClapTrap called " << name << " has been called" << std::endl;
+  std::cout << "Constructor of ClapTrap " << name << " has been called" << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
-  std::cout << "Destructor of ClapTrap called " << this->getName() << " has been called" << std::endl;
+  std::cout << "Destructor of ClapTrap " << this->getName() << " has been called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
   : name_(other.getName()), hit_points_(other.getHitPoints())
     , energy_points_(other.getEnergyPoints()), attack_damage_(other.getAttackDamage()) {
-  std::cout << "Copy constructor of ClapTrap called " << this->getName() << " has been called" << std::endl;
+  std::cout << "Copy constructor of ClapTrap " << this->getName() << " has been called" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
@@ -24,6 +24,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
     this->setEnergyPoints(other.getEnergyPoints());
     this->setAttackDamage(other.getAttackDamage());
   }
+  std::cout << "Assignment operator of ClapTrap " << this->getName() << " has been called" << std::endl;
   return *this;
 }
 
