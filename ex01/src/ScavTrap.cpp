@@ -3,7 +3,8 @@
 
 #include <iostream>
 
-ScavTrap::ScavTrap() : ClapTrap() {
+ScavTrap::ScavTrap() : ClapTrap()
+{
   this->setHitPoints(100);
   this->setEnergyPoints(50);
   this->setAttackDamage(20);
@@ -11,7 +12,6 @@ ScavTrap::ScavTrap() : ClapTrap() {
 }
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
-  this->setName(name);
   this->setHitPoints(100);
   this->setEnergyPoints(50);
   this->setAttackDamage(20);
@@ -22,7 +22,11 @@ ScavTrap::~ScavTrap() {
   std::cout << "Destructor of ScavTrap " << this->getName() << " has been called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) {
+ScavTrap::ScavTrap(const ScavTrap& other) {
+  this->setName(other.getName());
+  this->setHitPoints(other.getHitPoints());
+  this->setEnergyPoints(other.getEnergyPoints());
+  this->setAttackDamage(other.getAttackDamage());
   std::cout << "Copy constructor of ScavTrap " << this->getName() << " has been called" << std::endl;
 }
 
