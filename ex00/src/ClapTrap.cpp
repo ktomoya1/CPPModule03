@@ -34,7 +34,6 @@ void ClapTrap::attack(const std::string& target) {
     return;
   }
   this->setEnergyPoints(this->getEnergyPoints() - 1);
-  this->setHitPoints(this->getHitPoints() - 1);
   std::cout << "ClapTrap " << this->getName() << " attacks " << target << ", causing " << this->attack_damage_ << " points of damage!" << std::endl;
 }
 
