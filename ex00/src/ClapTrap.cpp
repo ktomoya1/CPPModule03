@@ -4,17 +4,17 @@
 
 ClapTrap::ClapTrap() {
   this->setName("default");
-  this->setHitPoints(0);
+  this->setHitPoints(10);
   this->setEnergyPoints(10);
-  this->setAttackDamage(10);
+  this->setAttackDamage(0);
   std::cout << "Default constructor of ClapTrap has been called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string& name) {
   this->setName(name);
-  this->setHitPoints(0);
+  this->setHitPoints(10);
   this->setEnergyPoints(10);
-  this->setAttackDamage(10);
+  this->setAttackDamage(0);
   std::cout << "Constructor of ClapTrap " << name << " has been called" << std::endl;
 }
 
