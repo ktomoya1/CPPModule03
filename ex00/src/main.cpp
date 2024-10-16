@@ -10,7 +10,7 @@ int main() {
 //  clap3.printStatus();
 //  clap3 = clap1;
 //  clap1.printStatus();
-//
+
   clap1.attack(clap2.getName());
   clap2.takeDamage(clap1.getAttackDamage());
   clap2.takeDamage(5);
