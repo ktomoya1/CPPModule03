@@ -21,11 +21,7 @@ FragTrap::~FragTrap() {
   std::cout << "Destructor of FragTrap " << this->getName() << " has been called" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap& other) {
-  this->setName(other.getName());
-  this->setHitPoints(other.getHitPoints());
-  this->setEnergyPoints(other.getEnergyPoints());
-  this->setAttackDamage(other.getAttackDamage());
+FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other) {
   std::cout << "Copy constructor of FragTrap " << this->getName() << " has been called" << std::endl;
 }
 
