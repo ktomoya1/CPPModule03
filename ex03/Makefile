@@ -1,7 +1,7 @@
-PROGRAM := fragtrap
+PROGRAM := diamondtrap
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow
 DEBUGFLAGS = -g -fsanitize=address
 
 INCDIR = inc

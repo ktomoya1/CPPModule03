@@ -3,10 +3,17 @@
 
 #include <iostream>
 
-FragTrap::FragTrap(const std::string& name) : ClapTrap(name) {
+FragTrap::FragTrap() : ClapTrap() {
   this->setHitPoints(100);
   this->setEnergyPoints(100);
   this->setAttackDamage(30);
+  std::cout << "Default constructor of FragTrap has been called" << std::endl;
+}
+
+FragTrap::FragTrap(const std::string& name) : ClapTrap(name) {
+  this->hit_points_ = 100;
+  this->energy_points_ = 100;
+  this->attack_damage_ = 30;
   std::cout << "Constructor of FragTrap " << name << " has been called" << std::endl;
 }
 

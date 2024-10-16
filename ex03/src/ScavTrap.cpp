@@ -1,9 +1,19 @@
-#include "ScavTrap.h"
 #include "ClapTrap.h"
+#include "ScavTrap.h"
 
 #include <iostream>
 
+ScavTrap::ScavTrap() : ClapTrap() {
+  this->setHitPoints(100);
+  this->setEnergyPoints(50);
+  this->setAttackDamage(20);
+  std::cout << "Default constructor of ScavTrap has been called" << std::endl;
+}
+
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
+  this->hit_points_ = 100;
+  this->energy_points_ = 50;
+  this->attack_damage_ = 20;
   std::cout << "Constructor of ScavTrap " << name << " has been called" << std::endl;
 }
 
