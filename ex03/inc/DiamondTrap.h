@@ -15,7 +15,7 @@ class DiamondTrap : public ScavTrap, public FragTrap {
     DiamondTrap& operator=(const DiamondTrap& other);
 
     void whoAmI() const;
-    void printStatus();
+    void printDiamondStatus() const;
     const std::string& getDiamondName() const;
     void setDiamondName(const std::string& name);
 

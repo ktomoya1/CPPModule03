@@ -6,11 +6,11 @@ class ClapTrap {
   public:
     ClapTrap();
     ClapTrap(const std::string& name);
-    ~ClapTrap();
+    virtual ~ClapTrap();
     ClapTrap(const ClapTrap& other);
     ClapTrap& operator=(const ClapTrap& other);
 
-    void attack(const std::string& target);
+    virtual void attack(const std::string& target) = 0;
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 

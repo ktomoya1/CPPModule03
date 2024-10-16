@@ -7,22 +7,18 @@
 #include <iostream>
 
 int main() {
-  DiamondTrap diamond_unit("Vortex");
-  ClapTrap clap_unit("Clap");
+  DiamondTrap diamond("Vortex");
+  DiamondTrap diamond_default;
+  ClapTrap clap("Spark");
 
-  diamond_unit.whoAmI();
+  diamond.printDiamondStatus();
+  diamond_default.printDiamondStatus();
 
-  diamond_unit.attack(clap_unit.getName());
-  std::cout << std::endl << "ClapTrap:" << std::endl;
-  std::cout << "Name: " << clap_unit.getName() << std::endl;
-  std::cout << "Hit Points: " << clap_unit.getHitPoints() << std::endl;
-  std::cout << "Energy Points: " << clap_unit.getEnergyPoints() << std::endl;
-  std::cout << "Attack Damage: " << clap_unit.getAttackDamage() << std::endl;
-  std::cout << std::endl << "DiamondTrap:" << std::endl;
-  diamond_unit.printStatus();
+  diamond.attack(clap.getName());
+  diamond.beRepaired(10);
+  diamond.highFiveGuys();
 
-  diamond_unit.beRepaired(10);
-  diamond_unit.highFiveGuys();
+  diamond.whoAmI();
 
   return 0;
 }

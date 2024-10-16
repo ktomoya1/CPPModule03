@@ -40,11 +40,12 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other) {
 
 void DiamondTrap::whoAmI() const {
   std::cout << "DiamondTrap name: " << this->getDiamondName() << std::endl;
-  std::cout << "ClapTrap name: " << ClapTrap::name_ << std::endl;
+  std::cout << "ClapTrap name: " << this->getName() << std::endl;
 }
 
-void DiamondTrap::printStatus() {
+void DiamondTrap::printDiamondStatus() const {
   std::cout << "Name: " << this->getDiamondName() << std::endl;
+  std::cout << "ClapTrap name: " << this->getName() << std::endl;
   std::cout << "Hit Points: " << this->hit_points_ << std::endl;
   std::cout << "Energy Points: " << this->energy_points_ << std::endl;
   std::cout << "Attack Damage: " << this->attack_damage_ << std::endl;
