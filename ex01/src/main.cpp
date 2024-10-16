@@ -10,6 +10,8 @@ int main() {
 
 //  scav_default.printStatus();
 //  scav_copy.printStatus();
+//  ClapTrap *clap2 = new ScavTrap("ktomoya");
+//  clap2->attack(scav.getName());
   clap.printStatus();
   scav.printStatus();
   clap.attack(scav.getName());
