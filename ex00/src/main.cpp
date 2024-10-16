@@ -9,7 +9,6 @@ int main() {
   spike.takeDamage(5);
   spike.beRepaired(4);
   spike.takeDamage(5);
-  spike.takeDamage(5);
   spike.takeDamage(1000);
   return 0;
 }

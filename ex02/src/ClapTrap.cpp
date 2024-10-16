@@ -2,19 +2,21 @@
 
 #include <iostream>
 
-ClapTrap::ClapTrap() {
-  this->setName("default");
-  this->setHitPoints(10);
-  this->setEnergyPoints(10);
-  this->setAttackDamage(0);
+ClapTrap::ClapTrap() :
+  name_("default"),
+  hit_points_(10),
+  energy_points_(10),
+  attack_damage_(0)
+{
   std::cout << "Default constructor of ClapTrap has been called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string& name) {
-  this->setName(name);
-  this->setHitPoints(10);
-  this->setEnergyPoints(10);
-  this->setAttackDamage(0);
+ClapTrap::ClapTrap(const std::string& name) :
+  name_(name),
+  hit_points_(10),
+  energy_points_(10),
+  attack_damage_(0)
+{
   std::cout << "Constructor of ClapTrap " << name << " has been called" << std::endl;
 }
 
@@ -22,11 +24,12 @@ ClapTrap::~ClapTrap() {
   std::cout << "Destructor of ClapTrap " << this->getName() << " has been called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& other) {
-  this->setName(other.getName());
-  this->setHitPoints(other.getHitPoints());
-  this->setEnergyPoints(other.getEnergyPoints());
-  this->setAttackDamage(other.getAttackDamage());
+ClapTrap::ClapTrap(const ClapTrap& other) :
+  name_(other.getName()),
+  hit_points_(other.getHitPoints()),
+  energy_points_(other.getEnergyPoints()),
+  attack_damage_(other.getAttackDamage())
+{
   std::cout << "Copy constructor of ClapTrap " << this->getName() << " has been called" << std::endl;
 }
 
