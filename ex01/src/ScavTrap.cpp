@@ -22,11 +22,7 @@ ScavTrap::~ScavTrap() {
   std::cout << "Destructor of ScavTrap " << this->getName() << " has been called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& other) {
-  this->setName(other.getName());
-  this->setHitPoints(other.getHitPoints());
-  this->setEnergyPoints(other.getEnergyPoints());
-  this->setAttackDamage(other.getAttackDamage());
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) {
   std::cout << "Copy constructor of ScavTrap " << this->getName() << " has been called" << std::endl;
 }
 

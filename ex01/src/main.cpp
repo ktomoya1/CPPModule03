@@ -3,18 +3,21 @@
 #include "ClapTrap.h"
 
 int main() {
-  ClapTrap clap_unit("Blaster");
-  ScavTrap scav_unit("Sentinel");
-  ScavTrap scav_copy(scav_unit);
+  ClapTrap clap("Blaster");
+  ScavTrap scav("Sentinel");
+//  ScavTrap scav_default;
+//  ScavTrap scav_copy(scav);
 
-  // ClapTrapのattackとScavTrapのattackで表示内容が違う
-  clap_unit.attack(scav_unit.getName());
-  scav_unit.takeDamage(clap_unit.getAttackDamage());
-  scav_unit.attack(clap_unit.getName());
-  clap_unit.takeDamage(scav_unit.getAttackDamage());
-  scav_unit.beRepaired(10);
-  // ClapTrapはguardGate()を使えないことの確認
-  scav_unit.guardGate();
-  // clap_unit.guardGate();
+//  scav_default.printStatus();
+//  scav_copy.printStatus();
+  clap.printStatus();
+  scav.printStatus();
+  clap.attack(scav.getName());
+  scav.takeDamage(clap.getAttackDamage());
+  scav.attack(clap.getName());
+  clap.takeDamage(scav.getAttackDamage());
+  scav.beRepaired(10);
+  scav.guardGate();
+  //clap.guardGate();
   return 0;
 }
