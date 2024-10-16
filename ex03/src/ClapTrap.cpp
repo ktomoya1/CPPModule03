@@ -105,3 +105,10 @@ void ClapTrap::setEnergyPoints(const unsigned int& energy_points) {
 void ClapTrap::setAttackDamage(const unsigned int& attack_damage) {
   this->attack_damage_ = attack_damage;
 }
+
+void ClapTrap::printStatus() const {
+  std::cout << "Name: " << this->getName() << std::endl;
+  std::cout << "Hit Points: " << this->getHitPoints() << std::endl;
+  std::cout << "Energy Points: " << this->getEnergyPoints() << std::endl;
+  std::cout << "Attack Damage: " << this->getAttackDamage() << std::endl;
+}

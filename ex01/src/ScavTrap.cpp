@@ -3,8 +3,7 @@
 
 #include <iostream>
 
-ScavTrap::ScavTrap() : ClapTrap()
-{
+ScavTrap::ScavTrap() : ClapTrap() {
   this->setHitPoints(100);
   this->setEnergyPoints(50);
   this->setAttackDamage(20);

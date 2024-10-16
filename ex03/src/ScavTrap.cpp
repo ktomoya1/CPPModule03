@@ -11,9 +11,9 @@ ScavTrap::ScavTrap() : ClapTrap() {
 }
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
-  this->hit_points_ = 100;
-  this->energy_points_ = 50;
-  this->attack_damage_ = 20;
+  this->setHitPoints(100);
+  this->setEnergyPoints(50);
+  this->setAttackDamage(20);
   std::cout << "Constructor of ScavTrap " << name << " has been called" << std::endl;
 }
 
